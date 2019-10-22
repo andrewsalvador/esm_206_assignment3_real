@@ -55,6 +55,7 @@ ggplot(data_clean, aes(x = year,
             alpha = .34)
             
 # More messing around (just a line graph not ribbon with fill)
+
 ggplot(data_clean, aes(x = year,
                        y = ft_above_sea)) +
   geom_line() +
@@ -82,6 +83,7 @@ ggplot(data_clean, aes(x = year,
 
   
 #Trying the real graph out
+
 ggplot(data_clean, aes(x = year,
                        y = ft_above_sea)) +
   geom_line(color = "blue") +
@@ -91,7 +93,7 @@ ggplot(data_clean, aes(x = year,
   geom_hline(aes(yintercept = 6377), color = "red") +
   annotate(geom = "text",
            x = 1900,
-           y = 6378,
+           y = 6378.9,
            label = "Land bridge emerges (6,377ft)",
            color = "red") + # Here maybe use a transparent rectangel instead of a line?
   annotate(geom = "text",
@@ -108,6 +110,7 @@ ggplot(data_clean, aes(x = year,
 
 
 
+# Random stuff
 
   geom_vline(aes(xintercept = 1950), color = "blue") +
   annotate(geom = "text",
