@@ -48,7 +48,21 @@ ggplot(space_launches, aes(x = launch_year,
            color = "blue4") +
   geom_vline(aes(xintercept = 1991),
                color = "pink1") +
-  scale_y_continuous(limits(0,0))
+  geom_vline(aes(xintercept = 2018),
+             color = "red") +
+  annotate(geom = "rect",
+           xmax = 2018,
+           xmin = 1991,
+           ymax = 42,
+           ymin = 0,
+           fill = "yellow",
+           alpha = .2) +
+  annotate(geom = "text",
+           x = 1990,
+           y = 25,
+           label = "(1991)",
+           size = 18) +
+  scale_x_continuous(limits = c(1920, 2070)) +
   coord_flip()
 
 
