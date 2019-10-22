@@ -121,12 +121,14 @@ due to increased lake salinity",
   geom_hline(aes(yintercept = 6360), 
              color = "red") +
   geom_point(aes(x = 1940,
-                 y = 6417)) + 
+                 y = 6417),
+                 size = 0.8) + 
   geom_text(aes(x = 1975, 
                 y = 6421, 
                 label = "(1940) Mono Basin diversion begins")) +
   geom_point(aes(x = 1982,
-                 y = 6372)) +
+                 y = 6372.8),
+             size = 0.8) +
   geom_text(aes(x = 1989, 
                 y = 6367,
                 label = "(1982) Mono Lake Tufa 
