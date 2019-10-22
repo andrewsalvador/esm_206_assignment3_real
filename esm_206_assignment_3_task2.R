@@ -2,10 +2,11 @@
 # ESM 206, Assignment 3, Task 2
 # 21 October 2019
 
-
+# Attach the necessary packages
 library(tidyverse)
 library(hexbin)
 library(tidyr)
+library(here)
 
 space_launches <- read_csv("space_launches.csv")
 
@@ -17,17 +18,6 @@ space_data <- space_launches %>%
   filter(agency == "US")
 
 
-
-# Random really bad graph
-ggplot(space_launches, aes(x = launch_year,
-                       y = agency)) +
-  geom_hex(bins = 5000) +
-  scale_fill_continuous(type = "viridis") +
-  geom_point(aes(x = launch_year,
-                 y = agency),
-                 size = .1) +
-  geom_hline(aes(yintercept = 16,
-                 color = "pink"))
 
 #Other really bad graph (this one is better to turn in)
 ggplot(space_launches, aes(x = launch_year,
@@ -65,6 +55,7 @@ ggplot(space_launches, aes(x = launch_year,
   scale_x_continuous(limits = c(1920, 2070)) +
   coord_flip()
 
+ggsave(here("final_graphs", "bad_graph.png"))
 
 
  

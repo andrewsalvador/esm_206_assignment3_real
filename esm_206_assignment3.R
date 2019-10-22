@@ -138,25 +138,12 @@ ggplot(data_clean, aes(x = year,
   scale_x_continuous(limits = c(1850, 2025), expand = c(0,0)) +
   theme_linedraw(12)
 
+ggsave(here("final_graphs", "mono_lake_water_levels.png"))
+
  
   
 
 
-# Random stuff
 
-  geom_vline(aes(xintercept = 1950), color = "blue") +
-  annotate(geom = "text",
-           x = 1950, 
-           y = 6410,
-           label = "YOOO",
-           color = "yellow") +
-  theme_dark() +
-  annotate(geom = "rect",
-           xmin = 1950,
-           xmax = 2000,
-           ymin = 6360,
-           ymax = 6390,
-           fill = "green",
-           alpha = .3) 
 
 
