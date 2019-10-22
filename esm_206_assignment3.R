@@ -90,24 +90,37 @@ ggplot(data_clean, aes(x = year,
   labs(x = "Year", 
        y ="Feet above sea level",
        title = "Mono Lake annual water levels from 1850-2017") +
-  geom_hline(aes(yintercept = 6377), color = "red") +
+  annotate(geom = "rect",
+           xmax = 2025,
+           xmin = 1850,
+           ymax = 6377,
+           ymin = 6350.1,
+           fill = "green",
+           alpha = .2) +
   annotate(geom = "text",
-           x = 1900,
-           y = 6378.9,
-           label = "Land bridge emerges (6,377ft)",
-           color = "red") + # Here maybe use a transparent rectangel instead of a line?
+           x = 1940,
+           y = 6375,
+           label = "(6377ft) Land bridge emerges",
+           color = "green4") +
+ geom_hline(aes(yintercept = 6377), 
+        color = "green4") + 
+  annotate(geom = "rect",
+           xmax = 2025,
+           xmin = 1850,
+           ymax = 6360,
+           ymin = 6350.1,
+           fill = "red",
+           alpha = .3) +
+            # Here maybe use a transparent rectangel instead of a line?
   annotate(geom = "text",
-           x = 1950,
-           y = 6360,
-           label = "Birds' food sources adversely affected due to increased lake salinity (6360ft",
+           x = 1940,
+           y = 6355.5,
+           label = "(6360ft) Birds' food sources adversely affected 
+due to increased lake salinity",
            color = "red") +
+  geom_hline(aes(yintercept = 6360), color = "red") +
   scale_y_continuous(limits = c(6350.1, 6439), expand = c(0,0)) + #what about that decimal point, and (6439)
   scale_x_continuous(limits = c(1850, 2025), expand = c(0,0))
-
-
-
-
-
 
 
 # Random stuff
