@@ -98,9 +98,10 @@ ggplot(data_clean, aes(x = year,
            fill = "sienna2",
            alpha = .2) +
   annotate(geom = "text",
-           x = 1920,
-           y = 6375,
-           label = "(6377ft) Land bridge emerges",
+           x = 1905,
+           y = 6372,
+           label = "(6377ft) Land bridge emerges allowing 
+  predator access to birds' nesting sites",
            color = "sienna4") +
  geom_hline(aes(yintercept = 6377), 
             color = "sienna4") +
@@ -113,11 +114,11 @@ ggplot(data_clean, aes(x = year,
            alpha = .3) +
             # Here maybe use a transparent rectangel instead of a line?
   annotate(geom = "text",
-           x = 1938,
+           x = 1905,
            y = 6355.5,
-           label = "(6360ft) Birds' food sources adversely affected 
-due to increased lake salinity",
-           color = "red") +
+           label = "(6360ft) Birds' food sources adversely 
+ affected due to increased lake salinity",
+           color = "red3") +
   geom_hline(aes(yintercept = 6360), 
              color = "red") +
   geom_point(aes(x = 1940,
@@ -136,6 +137,7 @@ due to increased lake salinity",
   scale_y_continuous(limits = c(6350.1, 6439), expand = c(0,0)) + #what about that decimal point, and (6439)
   scale_x_continuous(limits = c(1850, 2025), expand = c(0,0)) +
   theme_linedraw(12)
+
  
   
 
