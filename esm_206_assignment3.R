@@ -98,12 +98,12 @@ ggplot(data_clean, aes(x = year,
            fill = "green",
            alpha = .2) +
   annotate(geom = "text",
-           x = 1940,
+           x = 1920,
            y = 6375,
            label = "(6377ft) Land bridge emerges",
            color = "green4") +
  geom_hline(aes(yintercept = 6377), 
-        color = "green4") + 
+            color = "green4") +
   annotate(geom = "rect",
            xmax = 2025,
            xmin = 1850,
@@ -113,14 +113,29 @@ ggplot(data_clean, aes(x = year,
            alpha = .3) +
             # Here maybe use a transparent rectangel instead of a line?
   annotate(geom = "text",
-           x = 1940,
+           x = 1938,
            y = 6355.5,
            label = "(6360ft) Birds' food sources adversely affected 
 due to increased lake salinity",
            color = "red") +
-  geom_hline(aes(yintercept = 6360), color = "red") +
+  geom_hline(aes(yintercept = 6360), 
+             color = "red") +
+  geom_point(aes(x = 1940,
+                 y = 6417)) + 
+  geom_text(aes(x = 1975, 
+                y = 6421, 
+                label = "(1940) Mono Basin diversion begins")) +
+  geom_point(aes(x = 1982,
+                 y = 6372)) +
+  geom_text(aes(x = 1989, 
+                y = 6367,
+                label = "(1982) Mono Lake Tufa 
+                State Reserve created")) +
   scale_y_continuous(limits = c(6350.1, 6439), expand = c(0,0)) + #what about that decimal point, and (6439)
-  scale_x_continuous(limits = c(1850, 2025), expand = c(0,0))
+  scale_x_continuous(limits = c(1850, 2025), expand = c(0,0)) +
+  theme_linedraw(12)
+ 
+  
 
 
 # Random stuff
