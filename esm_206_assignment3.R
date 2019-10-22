@@ -54,7 +54,31 @@ ggplot(data_clean, aes(x = year,
             fill = "purple",
             alpha = .34)
             
-
+# More messing around
+ggplot(data_clean, aes(x = year,
+                       y = ft_above_sea)) +
+  geom_line() +
+  geom_hline(aes(yintercept = 6400), color = "red") +
+  geom_vline(aes(xintercept = 1950), color = "blue") +
+  annotate(geom = "text",
+           x = 1950, 
+           y = 6410,
+           label = "YOOO",
+           color = "green") +
+  theme_dark() +
+  annotate(geom = "rect",
+           xmin = 1950,
+           xmax = 2000,
+           ymin = 6360,
+           ymax = 6390,
+           fill = "green",
+           alpha = .3) +
+  geom_rect(xmin = 1930,
+            xmax = 1940,
+            ymin = 6400,
+            ymax = 6600,
+            fill = "purple",
+            alpha = .34)
 
   
 
