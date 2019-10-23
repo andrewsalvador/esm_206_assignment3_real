@@ -18,7 +18,7 @@ data_clean <- mono_lake_data %>%
   clean_names() %>% 
   rename(ft_above_sea = lake_level_feet_above_sea_level)
 
-# Make a nice graph
+# Make a nice graph of water level change (ft above sea level) per year from 1850 to 2017
 
 ggplot(data_clean, aes(x = year,
                        y = ft_above_sea)) +

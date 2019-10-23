@@ -3,15 +3,17 @@
 # 21 October 2019
 
 # Attach the necessary packages
+
 library(tidyverse)
 library(hexbin)
 library(tidyr)
 library(here)
 
 # Read in the data
+
 space_launches <- read_csv("space_launches.csv")
 
-# Make a really bad graph
+# Make a really bad graph of launch years by agency
 
 ggplot(space_launches, aes(x = launch_year,
                            y = agency)) +
@@ -47,6 +49,8 @@ ggplot(space_launches, aes(x = launch_year,
            size = 18) +
   scale_x_continuous(limits = c(1920, 2070)) +
   coord_flip()
+
+# Save graph as a .png file
 
 ggsave(here("final_graphs", "bad_graph.png"))
 
