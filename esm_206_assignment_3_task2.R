@@ -8,18 +8,11 @@ library(hexbin)
 library(tidyr)
 library(here)
 
+# Read in the data
 space_launches <- read_csv("space_launches.csv")
 
-# Mess around wrangling
-space_data <- space_launches %>% 
-  select(launch_date:category, -state_code, -variant) %>% 
-  filter(launch_year >= 1994) %>% 
-  arrange(launch_year) %>% 
-  filter(agency == "US")
+# Make a really bad graph
 
-
-
-#Other really bad graph (this one is better to turn in)
 ggplot(space_launches, aes(x = launch_year,
                            y = agency)) +
   geom_count(aes(color = launch_year)) +
